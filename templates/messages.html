@@ -1,0 +1,37 @@
+{% if messages %}
+{% for message in messages %}
+{% if message.tags == "info" %}
+<script>
+  iziToast.info({
+      title: "Info",
+      message: "{{message}}",
+      timeOut: 2500
+  });
+</script>
+{% elif message.tags == "error" %}
+<script>
+  iziToast.error({
+    title: "Error",
+    message: "{{message}}",
+    timeOut: 2500
+  });
+</script>
+{% elif message.tags == "warning" %}
+<script>
+  iziToast.warning({
+    title: "Warning",
+    message: "{{message}}",
+    timeOut: 2500
+  });
+</script>
+{% elif message.tags == "success" %}
+<script>
+  iziToast.success({
+    title: "success",
+    message: "{{message}}",
+    timeOut: 2500
+  });
+</script>
+{% endif %}
+{% endfor %}
+{% endif %}
